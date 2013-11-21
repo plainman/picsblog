@@ -1,0 +1,10 @@
+<h2>Foto bearbeiten</h2>
+
+<%= image_tag(THUMBNAIL_DIR + '/' + @post.thumbnail) %>
+
+<%= form_tag({:action => 'update', :id => @post.id}, :multipart => true) %>
+
+<%= render(:partial => 'details_form') %>
+
+<p><%= submit_tag('Übernehmen') %></p>
+</form>

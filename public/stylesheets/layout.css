@@ -1,0 +1,15 @@
+#page {
+width: 800px;
+margin:0 auto;
+}
+#content {
+width: 640px;
+float: left;
+}
+#sidebar {
+width: 160px
+float: right;
+}
+#footer {
+clear: both;
+}

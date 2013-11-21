@@ -1,0 +1,6 @@
+<h3>Neue Fotos</h3>
+<p>
+<% @newest_posts.each do |post| %>
+<%= link_to(image_tag(THUMBNAIL_DIR + '/' + post.thumbnail, :title => post.title), {:action => 'show', :id => post.id}) %><br />
+<% end %>
+</p>

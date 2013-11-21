@@ -1,0 +1,7 @@
+<h3>Bilddaten</h3>
+<p>Titel<br/>
+<%= text_field(:post, :title) %></p>
+<p>Beschreibung<br/>
+<%= text_field(:post, :description) %></p>
+<p>Datum und Uhrzeit<br/>
+<%= datetime_select(:post, :date, :order => [:day, :month, :year, :hour]) %><p>

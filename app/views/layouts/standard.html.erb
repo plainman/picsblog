@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/
+xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Picsblog</title>
+		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+		<%= stylesheet_link_tag('layout') %>
+		<%= stylesheet_link_tag('styles') %>
+	</head>
+	<body>
+		<div id="page">
+			<div id="header">
+				<% if flash[:notice] %>
+					<div id="notice"><p><%= flash[:notice] %></p></div>
+				<% end %>
+				<%= render( :template => 'layouts/navigation') %>
+			</div>
+			<div id="main">
+				<div id="content">
+					<%= yield %>
+				</div>
+				<div id="sidebar">
+					. 
+					<!-- < % = render_component(:controller => 'posts', :action => 'list_newest') %> -->
+				</div>
+			</div>
+			<div id="footer">
+				Picsblog ist meine erstes Rails-Projekt und basiert auf <%= link_to('Ruby on Rails', 'http://www.rubyonrails.org') %>.
+			</div>
+		</div>
+	</body>
+</html>

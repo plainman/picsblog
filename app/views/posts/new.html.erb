@@ -1,0 +1,14 @@
+<h2>Neues Foto anlegen</h2>
+
+<%= form_tag({:action => :create}, :multipart => true) %>
+
+<h3>Datei-Upload</h3>
+<p>Bilddatei:<br/>
+<%= file_field(:post, :image_file) %></p>
+<p>Thumbnail:<br />
+<%= file_field(:post, :thumbnail_file) %></p>
+
+<%= render(:partial => 'details_form') %>
+
+<%= submit_tag('Speichern') %></p>
+</form>

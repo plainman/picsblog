@@ -1,0 +1,4 @@
+<h2>&Uuml;bersicht</h2>
+<%= 'Keine Bilder enthalten.' if @posts.empty? %>
+<%= render(:partial => 'thumbnail', :collection => @posts) %>
+<!-- < % = will_paginate @posts %> -->

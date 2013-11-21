@@ -1,0 +1,24 @@
+<h2><%= h(@post.title) %></h2>
+<%= image_tag(IMAGE_DIR + '/' + @post.image, :id => 'big_image') %>
+<p><%= h(@post.description) %></p>
+<p>
+<%= link_to("< #{@prev_post.title}", :id => @prev_post.id) unless @prev_post.nil? %>
+<%= link_to("#{@next_post.title} >", :id => @next_post.id) unless @next_post.nil? %>
+</p>
+
+<h2>Kommentare</h2>
+<%= '<p>Bisher wurde noch kein Kommentar abgegeben.</p>' if @post.comments.count == 0 %>
+<%= render(:partial => 'comment', :collection => @post.comments) %>
+
+<%= form_tag(:action => :create_comment, :id => @post.id) %>
+<h2>Neuer Kommentar</h2>
+<p>Name:<br />
+<%= text_field(:comment, :name) %></p>
+<p>E-Mail:<br />
+<%= text_field(:comment, :email) %></p>
+<p>Website (falls vorhanden):<br />
+<%= text_field(:comment, :url) %></p>
+<p>Kommentar:<br />
+<%= text_area(:comment, :text, :rows => 5) %></p>
+<p><%= submit_tag('Kommentieren') %></p>
+</form>

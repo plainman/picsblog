@@ -1,0 +1,10 @@
+<p><strong>
+<% if comment.url.nil? || comment.url.empty? %>
+<%= h(comment.name) %>
+<% else %>
+<%= link_to(h(comment.name), h(comment.url)) %>
+<% end %>
+</strong> schrieb am <%= german_datetime(comment.created_at) %>: </p>
+<p><%= comment.text %></p>
+<%= link_to('Löschen', :action => 'delete_comment', :id => comment.id) %>
+<hr />
